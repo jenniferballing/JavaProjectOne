@@ -8,9 +8,9 @@ import java.awt.event.ActionListener;
  */
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB;
-    private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, GridP, ScoreP;
-    private JLabel Title, Player1L, Player2L, ORImageL;
-    private JTextField QuestionTF, Player1TF, Player2TF;
+    private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP;
+    private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF;
+    private JTextField Player1TF, Player2TF;
     private ImageIcon OlympicRings, CardBack, Card, Skater3, SnowB, FreestyleSki, Luge, Hockey, SkiJump3, SpeedSkate3, BobSled, Biathlon, Xcontry3;
     private int LENGTH = 500, WIDTH = 500;
 
@@ -43,17 +43,17 @@ public class Memory extends JFrame implements ActionListener{
         //TITLE PANEL
         TitleP= new JPanel();
         TitleP.setLayout(new FlowLayout(FlowLayout.CENTER));
-        TitleP.setPreferredSize(new Dimension(500, 100));
+        TitleP.setPreferredSize(new Dimension(500, 75));
         TitleP.setBackground(Color.lightGray);
         Title.setText("Olympic Memory Game");
-        Title.setForeground(Color.BLUE);
-        Title.setFont(Title.getFont().deriveFont(20f));
+        Title.setForeground(Color.BLACK);
+        Title.setFont(Title.getFont().deriveFont(30f));
         TitleP.add(Title);
 
         //IMAGE PANEL
         ImageP= new JPanel();
         ImageP.setLayout(new FlowLayout(FlowLayout.CENTER));
-        ImageP.setPreferredSize(new Dimension(400, 200));
+        ImageP.setPreferredSize(new Dimension(500, 150));
         ImageP.setBackground(Color.white);
         OlympicRings = new ImageIcon(this.getClass().getResource("OlympicRings.png"));
         ORImageL = new JLabel ("", OlympicRings, JLabel.CENTER);
@@ -61,9 +61,11 @@ public class Memory extends JFrame implements ActionListener{
 
         //QUESTION PANEL
         QuestionP = new JPanel();
-        QuestionTF = new JTextField("Would you like to play the Olympic Memory Game?");
+        QuestionTF = new JLabel("Would you like to play the Olympic Memory Game?");
+        QuestionTF.setFont(QuestionTF.getFont().deriveFont(15f));
         QuestionP.setBackground(Color.white);
         QuestionP.setPreferredSize(new Dimension(500, 100));
+        QuestionP.add(QuestionTF);
 
         //BUTTON PANEL
         ButtonP = new JPanel();
@@ -84,6 +86,11 @@ public class Memory extends JFrame implements ActionListener{
         ButtonP.add(YesB);
         ButtonP.add(NoB);
 
+        //BONUS PANEL
+        BonusP = new JPanel();
+        BonusP.setPreferredSize(new Dimension(500, 75));
+        BonusP.setBackground(Color.lightGray);
+
         //BACKGROUND PANEL
         ContainerP= new JPanel();
         ContainerP.setBackground(Color.white);
@@ -92,6 +99,7 @@ public class Memory extends JFrame implements ActionListener{
         ContainerP.add(ImageP);
         ContainerP.add(QuestionP);
         ContainerP.add(ButtonP);
+        ContainerP.add(BonusP);
         add(ContainerP, BorderLayout.NORTH);
 
     }
