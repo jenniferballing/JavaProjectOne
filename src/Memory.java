@@ -4,19 +4,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 /**
  * Created by Jennifer Balling on 3/10/14.
  */
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
-    private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP;
-    private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF ;
-    private ImageIcon OlympicRings, CardBack, Card, Skater3, SnowB, FreestyleSki, Luge, Hockey, SkiJump3, SpeedSkate3, BobSled, Biathlon, Xcontry3;
-    private int LENGTH = 500, WIDTH = 500;
+    private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
+    private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL ;
+    private ImageIcon OlympicRings, CardBack, Card, Skater, SnowB, FreestyleSki, Luge, Hockey, SkiJump, Skeleton, BobSled, Biathlon, Xcountry;
+    private int LENGTH = 700, WIDTH = 700;
     private int GridL, GridW, num, P1ScoreCount, P2ScoreCount;
     private JTextField input;
-    private String answer;
+    private JLabel PicArr[]= new JLabel[20];
+
 
     public Memory(){
 
@@ -54,12 +56,13 @@ public class Memory extends JFrame implements ActionListener{
     //YES BUTTON HANDLER
     void YesButtonListener (ActionEvent e){
 
-
         ButtonP.removeAll();
+        ButtonP.revalidate();
+        ButtonP.repaint();
         ButtonP.add(OKB);
         QuestionTF.setText("Would you like a 12, 16, or 20 card game?");
         input= new JTextField();
-        input.setPreferredSize(new Dimension(50,50));
+        input.setPreferredSize(new Dimension(25,25));
         QuestionP.add(input);
         input.setEditable(true);
 
@@ -78,7 +81,6 @@ public class Memory extends JFrame implements ActionListener{
     }
     void OpeningScreenLayout (){
         Title= new JLabel("Olympic Memory Game");
-        OlympicRings= new ImageIcon(this.getClass().getResource("OlympicRings.png"));
 
         //TITLE PANEL
         TitleP= new JPanel();
@@ -116,6 +118,8 @@ public class Memory extends JFrame implements ActionListener{
             }
         });
         ButtonP = new JPanel();
+        ButtonP.setPreferredSize(new Dimension(500, 50));
+        ButtonP.setBackground(Color.white);
         YesB= new JButton("YES");
         YesB.addActionListener( new ActionListener() {
             @Override
@@ -141,7 +145,7 @@ public class Memory extends JFrame implements ActionListener{
         //BACKGROUND PANEL
         ContainerP= new JPanel();
         ContainerP.setBackground(Color.white);
-        ContainerP.setPreferredSize(new Dimension(500, 500));
+        ContainerP.setPreferredSize(new Dimension(600, 600));
         ContainerP.add(TitleP);
         ContainerP.add(ImageP);
         ContainerP.add(QuestionP);
@@ -154,22 +158,33 @@ public class Memory extends JFrame implements ActionListener{
     void GameLayoutScreen(){
 
         ContainerP.removeAll();
+        ContainerP.setSize(new Dimension(700, 700));
+        ContainerP.setBackground(Color.WHITE);
+        TitleP.setBackground(Color.BLACK);
+        Title.setForeground(Color.ORANGE);
+        Title.setFont(Title.getFont().deriveFont(35f));
         //GRID PANEL
         GridP= new JPanel();
         //GridP.setLayout(new GridLayout(GridL, GridW));
         GridP.setBackground(Color.black);
-        GridP.setPreferredSize(new Dimension(400,400));
+        GridP.setPreferredSize(new Dimension((GridL*80),(GridW*80)));
         PlaceCards();
 
         //SCORE PANEL
         ScoreP= new JPanel();
-        Player1L= new JLabel("Player 1: ");
+        Player1L= new JLabel("Player 1:");
+        Player1L.setForeground(Color.BLUE);
+        Player1L.setFont(Player1L.getFont().deriveFont(16f));
         Player1TF= new JLabel("0");
-        Player2L= new JLabel("Player 2: ");
+        Player1TF.setFont(Player1TF.getFont().deriveFont(16f));
+        Player2L= new JLabel("Player 2:");
+        Player2L.setForeground(Color.RED);
+        Player2L.setFont(Player2L.getFont().deriveFont(16f));
         Player2TF = new JLabel("0");
-        ScoreP.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        ScoreP.setBackground(Color.lightGray);
-        ScoreP.setPreferredSize(new Dimension(100, 400));
+        Player2TF.setFont(Player2TF.getFont().deriveFont(16f));
+        ScoreP.setLayout(new FlowLayout(FlowLayout.CENTER));
+        ScoreP.setBackground(Color.WHITE);
+        ScoreP.setPreferredSize(new Dimension(500, 50));
         ScoreP.add(Player1L);
         ScoreP.add(Player1TF);
         ScoreP.add(Player2L);
@@ -199,9 +214,11 @@ public class Memory extends JFrame implements ActionListener{
     public void PlaceCards(){
         int NumCards= GridL*GridW;
         int i=GridL;
-        int j=GridW;
-        JPanel[][] panelHolder = new JPanel[i][j];
-        setPreferredSize(new Dimension(100, 100));
+        int j=GridW; 
+        panelHolder = new JPanel[i][j];
+        setLayout(new FlowLayout(FlowLayout.CENTER));
+        GridP.setPreferredSize(new Dimension(GridL * 89, GridW * 87));
+        //setPreferredSize(new Dimension(100,100));
 
         for(int m = 0; m < i; m++) {
             for(int n = 0; n < j; n++) {
@@ -210,9 +227,88 @@ public class Memory extends JFrame implements ActionListener{
         }
         for(int k=0; k<i; k++){
             for(int l=0; l<j; l++){
-                panelHolder[k][l].add(new JButton("Foo"));
-                GridP.add(panelHolder[k][l]);
-                setPreferredSize(new Dimension(100,100));
+                CardBack= new ImageIcon(this.getClass().getResource("Card.png"));
+                ORImageL = new JLabel ("", CardBack, JLabel.CENTER);
+                panelHolder[k][l].add(ORImageL);//ew ImageIcon(this.getClass().getResource("OlympicRings.png")););
+                GridP.add(panelHolder[k][l], new FlowLayout(FlowLayout.CENTER));
+            }
+        }
+        Randomizer();
+        update(this.getGraphics());
+        revalidate();
+        repaint();
+    }
+    void Randomizer (){
+
+        int count=0;
+
+        while(count < (GridW*GridL)-1){
+
+            Skater= new ImageIcon(this.getClass().getResource("Skater.png"));
+            SkateL= new JLabel("", Skater, JLabel.CENTER);
+            PicArr[count]=SkateL; count++;
+            PicArr[count]=SkateL; count++;
+
+            SnowB= new ImageIcon(this.getClass().getResource("SnowB.png"));
+            SnowL= new JLabel("", SnowB, JLabel.CENTER);
+            PicArr[count]=SnowL; count++;
+            PicArr[count]=SnowL; count++;
+
+            FreestyleSki= new ImageIcon(this.getClass().getResource("upsideSki.png"));
+            FSL= new JLabel("", FreestyleSki, JLabel.CENTER);
+            PicArr[count]=FSL; count++;
+            PicArr[count]=FSL; count++;
+
+            Luge= new ImageIcon(this.getClass().getResource("Luge.png"));
+            LL= new JLabel("", Luge, JLabel.CENTER);
+            PicArr[count]=LL; count++;
+            PicArr[count]=LL; count++;
+
+            Hockey= new ImageIcon(this.getClass().getResource("Hockey.png"));
+            HockL= new JLabel("", Hockey, JLabel.CENTER);
+            PicArr[count]=HockL; count++;
+            PicArr[count]=HockL; count++;
+
+            SkiJump= new ImageIcon(this.getClass().getResource("DownHill.png"));
+            SJL= new JLabel("", SkiJump, JLabel.CENTER);
+            PicArr[count]=SJL; count++;
+            PicArr[count]=SJL; count++;
+
+            BobSled= new ImageIcon(this.getClass().getResource("BobSled.png"));
+            BSL= new JLabel("", BobSled, JLabel.CENTER);
+            PicArr[count]=BSL; count++;
+            PicArr[count]=BSL; count++;
+
+            Biathlon= new ImageIcon(this.getClass().getResource("Biathlon.png"));
+            BiaL= new JLabel("", Biathlon, JLabel.CENTER);
+            PicArr[count]=BiaL; count++;
+            PicArr[count]=BiaL; count++;
+
+            Skeleton= new ImageIcon(this.getClass().getResource("Skeleton.png"));
+            SkelL= new JLabel("", Skeleton, JLabel.CENTER);
+            PicArr[count]=SkelL; count++;
+            PicArr[count]=SkelL; count++;
+
+            Xcountry= new ImageIcon(this.getClass().getResource("XCountry.png"));
+            XCL= new JLabel("", Xcountry, JLabel.CENTER);
+            PicArr[count]=XCL; count++;
+            PicArr[count]=XCL; count++;
+        }
+        //RANDOMIZE
+
+        int check =0;
+        int max= GridL*GridW;
+        while(check<max){
+            for(int m = 0; m < GridL; m++) {
+                for(int n = 0; n < GridW; n++) {
+
+                    double rand= Math.random()*(max);
+                    int rand1= (int)rand;
+                    panelHolder[m][n].removeAll();
+                    panelHolder[m][n].add(PicArr[rand1]);
+                    GridP.add(panelHolder[m][n], new FlowLayout(FlowLayout.CENTER));
+                    check++;
+                }
             }
         }
         update(this.getGraphics());
