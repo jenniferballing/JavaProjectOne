@@ -20,6 +20,7 @@ public class Memory extends JFrame implements ActionListener{
         GridL=1;
         GridW=1;
         OpeningScreenLayout();
+        //GameLayoutScreen();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(LENGTH, WIDTH);
@@ -45,11 +46,8 @@ public class Memory extends JFrame implements ActionListener{
             System.out.println("Wrong number");
         }
         System.out.println("Length: "+GridL+" Width: "+GridW);
-        //ContainerP.removeAll();
 
-        //num=12;
-
-       GameLayoutScreen();
+        GameLayoutScreen();
     }
 
     //YES BUTTON HANDLER
@@ -57,17 +55,14 @@ public class Memory extends JFrame implements ActionListener{
 
 
         ButtonP.removeAll();
-        OKB = new JButton("OK");
         ButtonP.add(OKB);
         QuestionTF.setText("Would you like a 12, 16, or 20 card game?");
-        QuestionP.add(QuestionTF);
-        input= new JTextField("12");
+        input= new JTextField();
         input.setPreferredSize(new Dimension(50,50));
         QuestionP.add(input);
         input.setEditable(true);
 
         System.out.println("Inside YesB");
-        OKButtonListener(e);
 
     }
     //NO BUTTON HANDLER
@@ -156,18 +151,33 @@ public class Memory extends JFrame implements ActionListener{
     }
 
     void GameLayoutScreen(){
+        /////////
 
-        ContainerP.removeAll();
-        //BACKGROUND PANEL
-        ContainerP= new JPanel();
-        ContainerP.setLayout(new BorderLayout());
-        ContainerP.setBackground(Color.lightGray);
-        ContainerP.setPreferredSize(new Dimension(500,500));
+        Title= new JLabel("Olympic Memory Game");
+
+        //TITLE PANEL
+        TitleP= new JPanel();
+        TitleP.setLayout(new FlowLayout(FlowLayout.CENTER));
+        TitleP.setPreferredSize(new Dimension(500, 75));
+        TitleP.setBackground(Color.lightGray);
+        Title.setText("Olympic Memory Game");
+        Title.setForeground(Color.BLACK);
+        Title.setFont(Title.getFont().deriveFont(30f));
+        TitleP.add(Title);
+
+        //BONUS PANEL
+        BonusP = new JPanel();
+        BonusP.setPreferredSize(new Dimension(500, 75));
+        BonusP.setBackground(Color.lightGray);
 
         //GRID PANEL
         GridP= new JPanel();
+        JLabel GridLabel= new JLabel("Hello");
+        GridLabel.setForeground(Color.CYAN);
+        GridP.add(GridLabel);
         GridP.setLayout(new GridLayout(GridL, GridW));
-        GridP.setBackground(Color.white);
+        GridP.setBackground(Color.black);
+        GridP.setPreferredSize(new Dimension(100,100));
 
         //SCORE PANEL
         ScoreP= new JPanel();
@@ -176,17 +186,27 @@ public class Memory extends JFrame implements ActionListener{
         Player2L= new JLabel("Player 2: ");
         Player2TF = new JLabel("0");
         ScoreP.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        ScoreP.setBackground(Color.lightGray);
-        ScoreP.setPreferredSize(new Dimension(50, 500));
+        ScoreP.setBackground(Color.yellow);
+        ScoreP.setPreferredSize(new Dimension(50, 50));
         ScoreP.add(Player1L);
         ScoreP.add(Player1TF);
         ScoreP.add(Player2L);
         ScoreP.add(Player2TF);
 
-        ContainerP.add(TitleP);
+        //BACKGROUND PANEL
+        //ContainerP= new JPanel();
+        //ContainerP.setBackground(Color.white);
+        //ContainerP.setPreferredSize(new Dimension(500, 500));
+        ContainerP.remove(ImageP);
+        ContainerP.remove(QuestionP);
+        ContainerP.remove(ButtonP);
+        //ContainerP.add(TitleP);
         ContainerP.add(GridP);
         ContainerP.add(ScoreP);
-        add(ContainerP);
+        //ContainerP.add(BonusP);
+        add(ContainerP, BorderLayout.NORTH);
+
+        ContainerP.update(this.getGraphics());
     }
     @Override
     public void actionPerformed (ActionEvent e){
