@@ -1,3 +1,5 @@
+import javafx.scene.layout.GridPaneBuilder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +10,7 @@ import java.awt.event.ActionListener;
  */
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
-    private JPanel ContainerP, GContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP;
+    private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP;
     private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF ;
     private ImageIcon OlympicRings, CardBack, Card, Skater3, SnowB, FreestyleSki, Luge, Hockey, SkiJump3, SpeedSkate3, BobSled, Biathlon, Xcontry3;
     private int LENGTH = 500, WIDTH = 500;
@@ -17,10 +19,8 @@ public class Memory extends JFrame implements ActionListener{
     private String answer;
 
     public Memory(){
-        GridL=1;
-        GridW=1;
+
         OpeningScreenLayout();
-        //GameLayoutScreen();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(LENGTH, WIDTH);
@@ -46,8 +46,9 @@ public class Memory extends JFrame implements ActionListener{
             System.out.println("Wrong number");
         }
         System.out.println("Length: "+GridL+" Width: "+GridW);
-
+        //update(this.getGraphics());
         GameLayoutScreen();
+
     }
 
     //YES BUTTON HANDLER
@@ -151,33 +152,14 @@ public class Memory extends JFrame implements ActionListener{
     }
 
     void GameLayoutScreen(){
-        /////////
 
-        Title= new JLabel("Olympic Memory Game");
-
-        //TITLE PANEL
-        TitleP= new JPanel();
-        TitleP.setLayout(new FlowLayout(FlowLayout.CENTER));
-        TitleP.setPreferredSize(new Dimension(500, 75));
-        TitleP.setBackground(Color.lightGray);
-        Title.setText("Olympic Memory Game");
-        Title.setForeground(Color.BLACK);
-        Title.setFont(Title.getFont().deriveFont(30f));
-        TitleP.add(Title);
-
-        //BONUS PANEL
-        BonusP = new JPanel();
-        BonusP.setPreferredSize(new Dimension(500, 75));
-        BonusP.setBackground(Color.lightGray);
-
+        ContainerP.removeAll();
         //GRID PANEL
         GridP= new JPanel();
-        JLabel GridLabel= new JLabel("Hello");
-        GridLabel.setForeground(Color.CYAN);
-        GridP.add(GridLabel);
-        GridP.setLayout(new GridLayout(GridL, GridW));
+        //GridP.setLayout(new GridLayout(GridL, GridW));
         GridP.setBackground(Color.black);
-        GridP.setPreferredSize(new Dimension(100,100));
+        GridP.setPreferredSize(new Dimension(400,400));
+        PlaceCards();
 
         //SCORE PANEL
         ScoreP= new JPanel();
@@ -186,27 +168,22 @@ public class Memory extends JFrame implements ActionListener{
         Player2L= new JLabel("Player 2: ");
         Player2TF = new JLabel("0");
         ScoreP.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        ScoreP.setBackground(Color.yellow);
-        ScoreP.setPreferredSize(new Dimension(50, 50));
+        ScoreP.setBackground(Color.lightGray);
+        ScoreP.setPreferredSize(new Dimension(100, 400));
         ScoreP.add(Player1L);
         ScoreP.add(Player1TF);
         ScoreP.add(Player2L);
         ScoreP.add(Player2TF);
 
-        //BACKGROUND PANEL
-        //ContainerP= new JPanel();
-        //ContainerP.setBackground(Color.white);
-        //ContainerP.setPreferredSize(new Dimension(500, 500));
-        ContainerP.remove(ImageP);
-        ContainerP.remove(QuestionP);
-        ContainerP.remove(ButtonP);
-        //ContainerP.add(TitleP);
+        ContainerP.add(TitleP);
         ContainerP.add(GridP);
         ContainerP.add(ScoreP);
-        //ContainerP.add(BonusP);
-        add(ContainerP, BorderLayout.NORTH);
+        add(ContainerP, BorderLayout.CENTER);
 
         ContainerP.update(this.getGraphics());
+        ContainerP.revalidate();
+        ContainerP.repaint();
+
     }
     @Override
     public void actionPerformed (ActionEvent e){
@@ -215,8 +192,31 @@ public class Memory extends JFrame implements ActionListener{
     public static void main (String []  args){
         Memory temp= new Memory();
         //temp.setContentPane(new Memory());
-        //temp.pack();
-        //temp.setLocationRelativeTo(null);
+        temp.pack();
+        temp.setLocationRelativeTo(null);
 
+    }
+    public void PlaceCards(){
+        int NumCards= GridL*GridW;
+        int i=GridL;
+        int j=GridW;
+        JPanel[][] panelHolder = new JPanel[i][j];
+        setPreferredSize(new Dimension(100, 100));
+
+        for(int m = 0; m < i; m++) {
+            for(int n = 0; n < j; n++) {
+                panelHolder[m][n] = new JPanel();
+            }
+        }
+        for(int k=0; k<i; k++){
+            for(int l=0; l<j; l++){
+                panelHolder[k][l].add(new JButton("Foo"));
+                GridP.add(panelHolder[k][l]);
+                setPreferredSize(new Dimension(100,100));
+            }
+        }
+        update(this.getGraphics());
+        revalidate();
+        repaint();
     }
 }
