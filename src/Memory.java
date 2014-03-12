@@ -12,12 +12,12 @@ import java.util.Random;
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
     private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
-    private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL ;
-    private ImageIcon OlympicRings, CardBack, Card, Skater, SnowB, FreestyleSki, Luge, Hockey, SkiJump, Skeleton, BobSled, Biathlon, Xcountry;
+    private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
+    private ImageIcon OlympicRings, CardBack, Card, Skater, Skater2, SnowB, SnowB2, FreestyleSki, FreestyleSki2, Luge, Luge2, Hockey, Hockey2, SkiJump, SkiJump2, Skeleton, Skeleton2, BobSled, BobSled2, Biathlon, Biathlon2,  Xcountry, Xcountry2;
     private int LENGTH = 700, WIDTH = 700;
     private int GridL, GridW, num, P1ScoreCount, P2ScoreCount;
     private JTextField input;
-    private JLabel PicArr[]= new JLabel[20];
+    private ImageIcon PicArr[]= new ImageIcon[20];
 
 
     public Memory(){
@@ -242,73 +242,122 @@ public class Memory extends JFrame implements ActionListener{
 
         int count=0;
 
-        while(count < (GridW*GridL)-1){
+        Skater= new ImageIcon(this.getClass().getResource("Skater.png"));
+        SkateL= new JLabel("", Skater, JLabel.CENTER);
+        PicArr[count]=Skater;
+        count++;
 
-            Skater= new ImageIcon(this.getClass().getResource("Skater.png"));
-            SkateL= new JLabel("", Skater, JLabel.CENTER);
-            PicArr[count]=SkateL; count++;
-            PicArr[count]=SkateL; count++;
+        Skater2= new ImageIcon(this.getClass().getResource("Skater.png"));
+        Skate2L= new JLabel("", Skater2, JLabel.CENTER);
+        PicArr[count]=Skater2;
+        count++;
 
-            SnowB= new ImageIcon(this.getClass().getResource("SnowB.png"));
-            SnowL= new JLabel("", SnowB, JLabel.CENTER);
-            PicArr[count]=SnowL; count++;
-            PicArr[count]=SnowL; count++;
+        SnowB= new ImageIcon(this.getClass().getResource("SnowB.png"));
+        SnowL= new JLabel("", SnowB, JLabel.CENTER);
+        PicArr[count]=SnowB;
+        count++;
 
-            FreestyleSki= new ImageIcon(this.getClass().getResource("upsideSki.png"));
-            FSL= new JLabel("", FreestyleSki, JLabel.CENTER);
-            PicArr[count]=FSL; count++;
-            PicArr[count]=FSL; count++;
+        SnowB2= new ImageIcon(this.getClass().getResource("SnowB.png"));
+        Snow2L= new JLabel("", SnowB2, JLabel.CENTER);
+        PicArr[count]=SnowB2;
+        count++;
 
-            Luge= new ImageIcon(this.getClass().getResource("Luge.png"));
-            LL= new JLabel("", Luge, JLabel.CENTER);
-            PicArr[count]=LL; count++;
-            PicArr[count]=LL; count++;
+        FreestyleSki= new ImageIcon(this.getClass().getResource("upsideSki.png"));
+        FSL= new JLabel("", FreestyleSki, JLabel.CENTER);
+        PicArr[count]=FreestyleSki;
+        count++;
 
-            Hockey= new ImageIcon(this.getClass().getResource("Hockey.png"));
-            HockL= new JLabel("", Hockey, JLabel.CENTER);
-            PicArr[count]=HockL; count++;
-            PicArr[count]=HockL; count++;
+        FreestyleSki2= new ImageIcon(this.getClass().getResource("upsideSki.png"));
+        FS2L= new JLabel("", FreestyleSki2, JLabel.CENTER);
+        PicArr[count]=FreestyleSki2;
+        count++;
 
-            SkiJump= new ImageIcon(this.getClass().getResource("DownHill.png"));
-            SJL= new JLabel("", SkiJump, JLabel.CENTER);
-            PicArr[count]=SJL; count++;
-            PicArr[count]=SJL; count++;
+        Luge= new ImageIcon(this.getClass().getResource("Luge.png"));
+        LL= new JLabel("", Luge, JLabel.CENTER);
+        PicArr[count]=Luge;
+        count++;
 
-            BobSled= new ImageIcon(this.getClass().getResource("BobSled.png"));
-            BSL= new JLabel("", BobSled, JLabel.CENTER);
-            PicArr[count]=BSL; count++;
-            PicArr[count]=BSL; count++;
+        Luge2= new ImageIcon(this.getClass().getResource("Luge.png"));
+        L2L= new JLabel("", Luge2, JLabel.CENTER);
+        PicArr[count]=Luge2;
+        count++;
 
-            Biathlon= new ImageIcon(this.getClass().getResource("Biathlon.png"));
-            BiaL= new JLabel("", Biathlon, JLabel.CENTER);
-            PicArr[count]=BiaL; count++;
-            PicArr[count]=BiaL; count++;
+        Hockey= new ImageIcon(this.getClass().getResource("Hockey.png"));
+        HockL= new JLabel("", Hockey, JLabel.CENTER);
+        PicArr[count]=Hockey;
+        count++;
 
-            Skeleton= new ImageIcon(this.getClass().getResource("Skeleton.png"));
-            SkelL= new JLabel("", Skeleton, JLabel.CENTER);
-            PicArr[count]=SkelL; count++;
-            PicArr[count]=SkelL; count++;
+        Hockey2= new ImageIcon(this.getClass().getResource("Hockey.png"));
+        Hock2L= new JLabel("", Hockey2, JLabel.CENTER);
+        PicArr[count]=Hockey2;
+        count++;
 
-            Xcountry= new ImageIcon(this.getClass().getResource("XCountry.png"));
-            XCL= new JLabel("", Xcountry, JLabel.CENTER);
-            PicArr[count]=XCL; count++;
-            PicArr[count]=XCL; count++;
+        SkiJump= new ImageIcon(this.getClass().getResource("DownHill.png"));
+        SJL= new JLabel("", SkiJump, JLabel.CENTER);
+        PicArr[count]=SkiJump;
+        count++;
+
+        SkiJump2= new ImageIcon(this.getClass().getResource("DownHill.png"));
+        SJ2L= new JLabel("", SkiJump2, JLabel.CENTER);
+        PicArr[count]=SkiJump2;
+        count++;
+
+        BobSled= new ImageIcon(this.getClass().getResource("BobSled.png"));
+        BSL= new JLabel("", BobSled, JLabel.CENTER);
+        PicArr[count]=BobSled;
+        count++;
+
+        BobSled2= new ImageIcon(this.getClass().getResource("BobSled.png"));
+        BS2L= new JLabel("", BobSled2, JLabel.CENTER);
+        PicArr[count]=BobSled2;
+        count++;
+
+        Biathlon= new ImageIcon(this.getClass().getResource("Biathlon.png"));
+        BiaL= new JLabel("", Biathlon, JLabel.CENTER);
+        PicArr[count]=Biathlon;
+        count++;
+
+        Biathlon2= new ImageIcon(this.getClass().getResource("Biathlon.png"));
+        Bia2L= new JLabel("", Biathlon2, JLabel.CENTER);
+        PicArr[count]=Biathlon2;
+        count++;
+
+        Skeleton= new ImageIcon(this.getClass().getResource("Skeleton.png"));
+        SkelL= new JLabel("", Skeleton, JLabel.CENTER);
+        PicArr[count]=Skeleton;
+        count++;
+
+        Skeleton2= new ImageIcon(this.getClass().getResource("Skeleton.png"));
+        Skel2L= new JLabel("", Skeleton2, JLabel.CENTER);
+        PicArr[count]=Skeleton2;
+        count++;
+
+        Xcountry= new ImageIcon(this.getClass().getResource("XCountry.png"));
+        XCL= new JLabel("", Xcountry, JLabel.CENTER);
+        PicArr[count]=Xcountry;
+        count++;
+
+        Xcountry2= new ImageIcon(this.getClass().getResource("XCountry.png"));
+        XC2L= new JLabel("", Xcountry2, JLabel.CENTER);
+        PicArr[count]=Xcountry2;
+
+        int max= GridL*GridW;
+        ImageIcon GameArr[]= new ImageIcon[max];
+        int u=0;
+        for(u=0; u<max; u++){
+            GameArr[u]=PicArr[u];
         }
+
         //RANDOMIZE
 
-        int check =0;
-        int max= GridL*GridW;
-        while(check<max){
-            for(int m = 0; m < GridL; m++) {
-                for(int n = 0; n < GridW; n++) {
+        double rand= Math.random()*(max);
+        int rand1= (int)rand;
 
-                    double rand= Math.random()*(max);
-                    int rand1= (int)rand;
-                    panelHolder[m][n].removeAll();
-                    panelHolder[m][n].add(PicArr[rand1]);
-                    GridP.add(panelHolder[m][n], new FlowLayout(FlowLayout.CENTER));
-                    check++;
-                }
+        for(int m = 0; m < GridL; m++) {
+            for(int n = 0; n < GridW; n++) {
+
+                ORImageL.setIcon(GameArr[rand1]);
+                panelHolder[m][n].add(ORImageL);
             }
         }
         update(this.getGraphics());
