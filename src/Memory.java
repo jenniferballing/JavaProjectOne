@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -350,16 +352,20 @@ public class Memory extends JFrame implements ActionListener{
 
         //RANDOMIZE
 
-        double rand= Math.random()*(max);
-        int rand1= (int)rand;
+        ArrayList<Integer> list= new ArrayList<Integer>();
+        for(int y=0; y<max; y++){
+            list.add(y);
+        }
+        Collections.shuffle(list);
 
+        int counter=0;
         for(int m = 0; m < GridL; m++) {
             for(int n = 0; n < GridW; n++) {
-
-                ORImageL.setIcon(GameArr[rand1]);
-                panelHolder[m][n].add(ORImageL);
+                ((JLabel)panelHolder[m][n].getComponent(0)).setIcon(GameArr[list.get(counter)]);
+                counter++;
             }
         }
+
         update(this.getGraphics());
         revalidate();
         repaint();
