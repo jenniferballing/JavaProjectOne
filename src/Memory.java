@@ -1,12 +1,12 @@
-import javafx.scene.layout.GridPaneBuilder;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 /**
  * Created by Jennifer Balling on 3/10/14.
@@ -20,6 +20,10 @@ public class Memory extends JFrame implements ActionListener{
     private int GridL, GridW, num, P1ScoreCount, P2ScoreCount;
     private JTextField input;
     private ImageIcon PicArr[]= new ImageIcon[20];
+    ArrayList<Integer> list= new ArrayList<Integer>();
+    int max;
+    ImageIcon GameArr[];
+    int counter;
 
 
     public Memory(){
@@ -29,7 +33,47 @@ public class Memory extends JFrame implements ActionListener{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(LENGTH, WIDTH);
         setVisible(true);
+
+        addMouseListener((new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                System.out.println("Inside MouseClicked...");
+                Randomizer();
+                int i=GridW;
+                int j= GridL;
+                for(int m = 0; m < i; m++) {
+                    for(int n = 0; n < j; n++) {
+                        if(e.getSource().equals(panelHolder[m][n])){
+                            ((JLabel)panelHolder[m][n].getComponent(0)).setIcon(GameArr[list.get(counter)]);
+                            //update(this.getGraphics());
+                            revalidate();
+                            repaint();
+                        }
+                    }
+                }
+
+
+            }
+        }));
     }
+    /*public void mouseClicked (MouseEvent e) {
+        System.out.println("Inside MouseClicked...");
+        Randomizer();
+        int i=GridW;
+        int j= GridL;
+        for(int m = 0; m < i; m++) {
+            for(int n = 0; n < j; n++) {
+                if(e.getSource().equals(panelHolder[m][n])){
+                    ((JLabel)panelHolder[m][n].getComponent(0)).setIcon(GameArr[list.get(counter)]);
+                    update(this.getGraphics());
+                    revalidate();
+                    repaint();
+                }
+            }
+        }
+    }*/
+
     //OK BUTTON LISTENER
     void OKButtonListener (ActionEvent e){
 
@@ -208,7 +252,6 @@ public class Memory extends JFrame implements ActionListener{
     }
     public static void main (String []  args){
         Memory temp= new Memory();
-        //temp.setContentPane(new Memory());
         temp.pack();
         temp.setLocationRelativeTo(null);
 
@@ -219,7 +262,7 @@ public class Memory extends JFrame implements ActionListener{
         int j=GridW; 
         panelHolder = new JPanel[i][j];
         setLayout(new FlowLayout(FlowLayout.CENTER));
-        GridP.setPreferredSize(new Dimension(GridL * 89, GridW * 87));
+        GridP.setPreferredSize(new Dimension(GridL * 100, GridW * 100));
         //setPreferredSize(new Dimension(100,100));
 
         for(int m = 0; m < i; m++) {
@@ -240,6 +283,7 @@ public class Memory extends JFrame implements ActionListener{
         revalidate();
         repaint();
     }
+
     void Randomizer (){
 
         int count=0;
@@ -343,31 +387,28 @@ public class Memory extends JFrame implements ActionListener{
         XC2L= new JLabel("", Xcountry2, JLabel.CENTER);
         PicArr[count]=Xcountry2;
 
-        int max= GridL*GridW;
-        ImageIcon GameArr[]= new ImageIcon[max];
+        max=GridL*GridW;
+        GameArr= new ImageIcon[max];
         int u=0;
         for(u=0; u<max; u++){
             GameArr[u]=PicArr[u];
         }
-
         //RANDOMIZE
-
-        ArrayList<Integer> list= new ArrayList<Integer>();
         for(int y=0; y<max; y++){
             list.add(y);
         }
         Collections.shuffle(list);
-
-        int counter=0;
-        for(int m = 0; m < GridL; m++) {
+        counter = 0;
+        //mouseClicked();
+        /*for(int m = 0; m < GridL; m++) {
             for(int n = 0; n < GridW; n++) {
+
                 ((JLabel)panelHolder[m][n].getComponent(0)).setIcon(GameArr[list.get(counter)]);
                 counter++;
             }
-        }
+        }*/
 
-        update(this.getGraphics());
-        revalidate();
-        repaint();
+
     }
 }
+
