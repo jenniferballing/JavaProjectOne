@@ -1,6 +1,7 @@
 package mem;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -14,13 +15,15 @@ public class OlympicObj implements MouseListener {
     ImageIcon Sport;
     boolean isClicked;
     Memory gameBoard;
+    boolean check;
 
-    OlympicObj(JPanel panel, ImageIcon Olympics, ImageIcon Sport, boolean isClicked, Memory gameBoard){
+    OlympicObj(JPanel panel, ImageIcon Olympics, ImageIcon Sport, boolean isClicked, Memory gameBoard, boolean check){
         this.panel=panel;
         this.Olympics=Olympics;
         this.Sport=Sport;
         this.isClicked= isClicked;
         this.gameBoard=gameBoard;
+        this.check=check;
 
         panel.addMouseListener(this);
     }
@@ -36,15 +39,28 @@ public class OlympicObj implements MouseListener {
         this.gameBoard.checkBoard(this);
     }
     void gotAMatch(OlympicObj Obj){
+        if(Obj.check){
         if(Obj.isClicked){
             if(Obj!=this){
-                if(Obj.Sport==this.Sport){
-                    System.out.println("We have a Winner!!!");//Winner and reset function calls
+                if(Obj.Sport.getImage()==this.Sport.getImage()){
+                    this.MatchFunc();
+                    ImageIcon done= new ImageIcon(this.getClass().getResource("done.png"));
+                    ((JLabel)this.panel.getComponent(0)).setIcon(done);
+                    ((JLabel)Obj.panel.getComponent(0)).setIcon(done);
+                    this.check=false;
+                    Obj.check=false;
                 }
                 else {
-                    System.out.println("We need to reset");//this.reset function
+                    if(JOptionPane.showConfirmDialog(this.gameBoard, "Not a match. Next Player's turn...")==JOptionPane.OK_OPTION){
+                        this.Reset();
+                        Obj.Reset();
+                    }
+                    else {
+                        System.exit(0);
+                    }
                 }
             }
+        }
         }
     }
 
@@ -66,5 +82,12 @@ public class OlympicObj implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+    void Reset(){
+        this.isClicked=false;
+        ((JLabel)this.panel.getComponent(0)).setIcon(Olympics);
+    }
+    void MatchFunc(){
+        JOptionPane.showMessageDialog(this.gameBoard, "You got a match! It's your turn again.");
     }
 }

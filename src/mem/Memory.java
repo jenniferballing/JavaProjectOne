@@ -257,7 +257,8 @@ public class Memory extends JFrame implements ActionListener{
             for(i=0; i<GridL; i++){
                 for(j=0; j<GridW; j++){
                     boolean isClicked=false;
-                    oArr[arrCounter]=new OlympicObj(panelHolder[i][j], CardBack, GameArr[list.get(arrCounter)], isClicked, this);
+                    boolean check=true;
+                    oArr[arrCounter]=new OlympicObj(panelHolder[i][j], CardBack, GameArr[list.get(arrCounter)], isClicked, this, check);
                     arrCounter++;
                 }
             }
