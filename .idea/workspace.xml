@@ -64,31 +64,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Memory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Memory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mem/Memory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="0" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.37692308" vertical-offset="1451" max-vertical-offset="4335">
+            <state line="229" column="9" selection-start="7607" selection-end="7607" vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="1904">
               <folding>
                 <element signature="method#OKButtonListener#0;class#Memory#0" expanded="false" />
                 <element signature="method#YesButtonListener#0;class#Memory#0" expanded="false" />
                 <element signature="method#NoButtonListener#0;class#Memory#0" expanded="false" />
                 <element signature="method#OpeningScreenLayout#0;class#Memory#0" expanded="false" />
-                <element signature="e#4113#4275#0" expanded="true" />
-                <element signature="e#4264#4265#0" expanded="true" />
-                <element signature="e#4478#4641#0" expanded="true" />
-                <element signature="e#4630#4631#0" expanded="true" />
-                <element signature="e#4707#4869#0" expanded="true" />
-                <element signature="e#4858#4859#0" expanded="true" />
+                <element signature="e#4063#4225#0" expanded="true" />
+                <element signature="e#4214#4215#0" expanded="true" />
+                <element signature="e#4428#4591#0" expanded="true" />
+                <element signature="e#4580#4581#0" expanded="true" />
+                <element signature="e#4657#4819#0" expanded="true" />
+                <element signature="e#4808#4809#0" expanded="true" />
                 <element signature="method#GameLayoutScreen#0;class#Memory#0" expanded="false" />
+                <element signature="method#Randomizer#0;class#Memory#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OlympicObj.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="OlympicObj.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mem/OlympicObj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.0" vertical-offset="749" max-vertical-offset="1394">
+            <state line="41" column="95" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.42431763" vertical-offset="526" max-vertical-offset="1292">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -390,7 +391,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -399,7 +400,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40438873" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39341694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -432,7 +433,11 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -447,13 +452,14 @@
             <element signature="method#YesButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#NoButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#OpeningScreenLayout#0;class#Memory#0" expanded="false" />
-            <element signature="e#4113#4275#0" expanded="true" />
-            <element signature="e#4264#4265#0" expanded="true" />
-            <element signature="e#4478#4641#0" expanded="true" />
-            <element signature="e#4630#4631#0" expanded="true" />
-            <element signature="e#4707#4869#0" expanded="true" />
-            <element signature="e#4858#4859#0" expanded="true" />
+            <element signature="e#4063#4225#0" expanded="true" />
+            <element signature="e#4214#4215#0" expanded="true" />
+            <element signature="e#4428#4591#0" expanded="true" />
+            <element signature="e#4580#4581#0" expanded="true" />
+            <element signature="e#4657#4819#0" expanded="true" />
+            <element signature="e#4808#4809#0" expanded="true" />
             <element signature="method#GameLayoutScreen#0;class#Memory#0" expanded="false" />
+            <element signature="method#Randomizer#0;class#Memory#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -474,30 +480,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mem/OlympicObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.0" vertical-offset="749" max-vertical-offset="1394">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mem/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="0" selection-start="8792" selection-end="8792" vertical-scroll-proportion="0.37692308" vertical-offset="1451" max-vertical-offset="4335">
+        <state line="229" column="9" selection-start="7607" selection-end="7607" vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="1904">
           <folding>
             <element signature="method#OKButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#YesButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#NoButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#OpeningScreenLayout#0;class#Memory#0" expanded="false" />
-            <element signature="e#4113#4275#0" expanded="true" />
-            <element signature="e#4264#4265#0" expanded="true" />
-            <element signature="e#4478#4641#0" expanded="true" />
-            <element signature="e#4630#4631#0" expanded="true" />
-            <element signature="e#4707#4869#0" expanded="true" />
-            <element signature="e#4858#4859#0" expanded="true" />
+            <element signature="e#4063#4225#0" expanded="true" />
+            <element signature="e#4214#4215#0" expanded="true" />
+            <element signature="e#4428#4591#0" expanded="true" />
+            <element signature="e#4580#4581#0" expanded="true" />
+            <element signature="e#4657#4819#0" expanded="true" />
+            <element signature="e#4808#4809#0" expanded="true" />
             <element signature="method#GameLayoutScreen#0;class#Memory#0" expanded="false" />
+            <element signature="method#Randomizer#0;class#Memory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mem/OlympicObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="95" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.42431763" vertical-offset="526" max-vertical-offset="1292">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

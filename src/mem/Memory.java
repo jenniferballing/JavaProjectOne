@@ -86,11 +86,6 @@ public class Memory extends JFrame implements ActionListener{
         }
     }
 
-        /*MouseClicked (MouseEvent e){
-
-    }*/
-
-
     void OpeningScreenLayout (){
         Title= new JLabel("Olympic Memory Game");
 
@@ -222,6 +217,18 @@ public class Memory extends JFrame implements ActionListener{
         temp.setLocationRelativeTo(null);
 
     }
+    int clickCount=0;
+    public void checkBoard(OlympicObj obj){
+        if(obj.isClicked){
+            clickCount++;
+            if (clickCount > 1) {
+                for (int g = 0; g < arrCounter; g++) {
+                    obj.gotAMatch(oArr[g]);
+                }
+                clickCount = 0;
+            }
+        }
+    }
     public void PlaceCards(){
         int NumCards= GridL*GridW;
         int i=GridL;
@@ -243,56 +250,20 @@ public class Memory extends JFrame implements ActionListener{
                 ORImageL = new JLabel ("", CardBack, JLabel.CENTER);
                 panelHolder[k][l].add(ORImageL);
                 GridP.add(panelHolder[k][l], new FlowLayout(FlowLayout.CENTER));
-    }
+            }
+        }
         Randomizer();
-
-        arrCounter=0;
-            for(int t=0; t<i; t++){
-                for(int w=0; w<j; w++){
-
-                    oArr[arrCounter]=new OlympicObj(panelHolder[t][w], CardBack, GameArr[list.get(arrCounter)]);
-                    panelHolder[t][w].addMouseListener(new MouseListener() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for (int h = 0; h < arrCounter; h++) {
-                                boolean attempt;
-                                attempt = oArr[h].isClicked();
-                                if (attempt) {
-                                    for (int g = 0; g < arrCounter; g++) {
-                                        oArr[h].gotAMatch(oArr[g]);
-                                    }
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void mousePressed(MouseEvent e) {
-
-                        }
-
-                        @Override
-                        public void mouseReleased(MouseEvent e) {
-
-                        }
-
-                        @Override
-                        public void mouseEntered(MouseEvent e) {
-
-                        }
-
-                        @Override
-                        public void mouseExited(MouseEvent e) {
-
-                        }
-                    });
+            arrCounter=0;
+            for(i=0; i<GridL; i++){
+                for(j=0; j<GridW; j++){
+                    boolean isClicked=false;
+                    oArr[arrCounter]=new OlympicObj(panelHolder[i][j], CardBack, GameArr[list.get(arrCounter)], isClicked, this);
                     arrCounter++;
                 }
             }
-
         update(this.getGraphics());
         revalidate();
         repaint();
-    }
     }
 
     void Randomizer (){
@@ -412,4 +383,5 @@ public class Memory extends JFrame implements ActionListener{
         counter = 0;
     }
 }
+
 
