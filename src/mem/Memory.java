@@ -11,7 +11,7 @@ import java.util.Collections;
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
     private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
-    private JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
+    public JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
     private ImageIcon OlympicRings, CardBack, Card, Skater, Skater2, SnowB, SnowB2, FreestyleSki, FreestyleSki2, Luge, Luge2, Hockey, Hockey2, SkiJump, SkiJump2, Skeleton, Skeleton2, BobSled, BobSled2, Biathlon, Biathlon2,  Xcountry, Xcountry2;
     private int LENGTH = 700, WIDTH = 700;
     private int GridL, GridW, num, P1ScoreCount, P2ScoreCount;
@@ -22,6 +22,7 @@ public class Memory extends JFrame implements ActionListener{
     ImageIcon GameArr[];
     public int counter, arrCounter;
     public OlympicObj oArr[];
+    Player p1, p2;
 
 
     public Memory(){
@@ -163,7 +164,6 @@ public class Memory extends JFrame implements ActionListener{
     }
 
     void GameLayoutScreen(){
-
         ContainerP.removeAll();
         ContainerP.setSize(new Dimension(700, 700));
         ContainerP.setBackground(Color.WHITE);
