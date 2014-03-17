@@ -22,7 +22,7 @@ public class Memory extends JFrame implements ActionListener{
     ImageIcon GameArr[];
     public int counter, arrCounter;
     public OlympicObj oArr[];
-    Player p1, p2;
+    public Player p1,p2;
 
 
     public Memory(){
@@ -89,6 +89,9 @@ public class Memory extends JFrame implements ActionListener{
 
     void OpeningScreenLayout (){
         Title= new JLabel("Olympic Memory Game");
+        p1= new Player("P1", 0, 0, true, this);
+        p2= new Player("P2", 0, 0, false, this);
+
 
         //TITLE PANEL
         TitleP= new JPanel();
@@ -164,6 +167,7 @@ public class Memory extends JFrame implements ActionListener{
     }
 
     void GameLayoutScreen(){
+
         ContainerP.removeAll();
         ContainerP.setSize(new Dimension(700, 700));
         ContainerP.setBackground(Color.WHITE);

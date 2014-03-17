@@ -55,23 +55,6 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/mem/Player.java" line="18" class="mem.Player" package="mem">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -84,18 +67,16 @@
       <file leaf-file-name="Memory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mem/Memory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2669">
+            <state line="92" column="42" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4369">
               <folding>
-                <element signature="method#OKButtonListener#0;class#Memory#0" expanded="false" />
                 <element signature="method#YesButtonListener#0;class#Memory#0" expanded="false" />
                 <element signature="method#NoButtonListener#0;class#Memory#0" expanded="false" />
-                <element signature="method#OpeningScreenLayout#0;class#Memory#0" expanded="false" />
-                <element signature="e#4081#4243#0" expanded="true" />
-                <element signature="e#4232#4233#0" expanded="true" />
-                <element signature="e#4446#4609#0" expanded="true" />
-                <element signature="e#4598#4599#0" expanded="true" />
-                <element signature="e#4675#4837#0" expanded="true" />
-                <element signature="e#4826#4827#0" expanded="true" />
+                <element signature="e#4185#4347#0" expanded="true" />
+                <element signature="e#4336#4337#0" expanded="true" />
+                <element signature="e#4550#4713#0" expanded="true" />
+                <element signature="e#4702#4703#0" expanded="true" />
+                <element signature="e#4779#4941#0" expanded="true" />
+                <element signature="e#4930#4931#0" expanded="true" />
                 <element signature="method#Randomizer#0;class#Memory#0" expanded="false" />
               </folding>
             </state>
@@ -105,7 +86,7 @@
       <file leaf-file-name="OlympicObj.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mem/OlympicObj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="30" selection-start="2984" selection-end="2984" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="2142">
+            <state line="102" column="52" selection-start="3096" selection-end="3105" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1989">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,7 +97,7 @@
       <file leaf-file-name="Player.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mem/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="34" selection-start="351" selection-end="351" vertical-scroll-proportion="0.41564792" vertical-offset="119" max-vertical-offset="629">
+            <state line="34" column="12" selection-start="971" selection-end="971" vertical-scroll-proportion="0.70660144" vertical-offset="289" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -135,8 +116,8 @@
         <option value="$PROJECT_DIR$/src/MouseListener.java" />
         <option value="$PROJECT_DIR$/src/Memory.java" />
         <option value="$PROJECT_DIR$/src/mem/Memory.java" />
-        <option value="$PROJECT_DIR$/src/mem/Player.java" />
         <option value="$PROJECT_DIR$/src/mem/OlympicObj.java" />
+        <option value="$PROJECT_DIR$/src/mem/Player.java" />
       </list>
     </option>
   </component>
@@ -426,7 +407,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40353698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4028213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -436,7 +417,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17569546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17569546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3181818" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -444,6 +425,31 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4028213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17569546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3181818" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -474,16 +480,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="262" column="22" selection-start="8753" selection-end="8753" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6579">
           <folding>
-            <element signature="method#OKButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#YesButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#NoButtonListener#0;class#Memory#0" expanded="false" />
-            <element signature="method#OpeningScreenLayout#0;class#Memory#0" expanded="false" />
-            <element signature="e#4081#4243#0" expanded="true" />
-            <element signature="e#4232#4233#0" expanded="true" />
-            <element signature="e#4446#4609#0" expanded="true" />
-            <element signature="e#4598#4599#0" expanded="true" />
-            <element signature="e#4675#4837#0" expanded="true" />
-            <element signature="e#4826#4827#0" expanded="true" />
+            <element signature="e#4185#4347#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4550#4713#0" expanded="true" />
+            <element signature="e#4702#4703#0" expanded="true" />
+            <element signature="e#4779#4941#0" expanded="true" />
+            <element signature="e#4930#4931#0" expanded="true" />
             <element signature="method#Randomizer#0;class#Memory#0" expanded="false" />
           </folding>
         </state>
@@ -507,18 +511,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mem/Memory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2669">
+        <state line="92" column="42" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.0" vertical-offset="896" max-vertical-offset="4369">
           <folding>
-            <element signature="method#OKButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#YesButtonListener#0;class#Memory#0" expanded="false" />
             <element signature="method#NoButtonListener#0;class#Memory#0" expanded="false" />
-            <element signature="method#OpeningScreenLayout#0;class#Memory#0" expanded="false" />
-            <element signature="e#4081#4243#0" expanded="true" />
-            <element signature="e#4232#4233#0" expanded="true" />
-            <element signature="e#4446#4609#0" expanded="true" />
-            <element signature="e#4598#4599#0" expanded="true" />
-            <element signature="e#4675#4837#0" expanded="true" />
-            <element signature="e#4826#4827#0" expanded="true" />
+            <element signature="e#4185#4347#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4550#4713#0" expanded="true" />
+            <element signature="e#4702#4703#0" expanded="true" />
+            <element signature="e#4779#4941#0" expanded="true" />
+            <element signature="e#4930#4931#0" expanded="true" />
             <element signature="method#Randomizer#0;class#Memory#0" expanded="false" />
           </folding>
         </state>
@@ -526,7 +528,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mem/OlympicObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="30" selection-start="2984" selection-end="2984" vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="2142">
+        <state line="102" column="52" selection-start="3096" selection-end="3105" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1989">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -535,7 +537,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mem/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="34" selection-start="351" selection-end="351" vertical-scroll-proportion="0.41564792" vertical-offset="119" max-vertical-offset="629">
+        <state line="34" column="12" selection-start="971" selection-end="971" vertical-scroll-proportion="0.70660144" vertical-offset="289" max-vertical-offset="850">
           <folding />
         </state>
       </provider>

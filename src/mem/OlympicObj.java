@@ -16,11 +16,6 @@ public class OlympicObj implements MouseListener {
     Memory gameBoard;
     boolean check;
 
-    Player p1, p2;
-
-
-
-
     OlympicObj(JPanel panel, ImageIcon Olympics, ImageIcon Sport, boolean isClicked, Memory gameBoard, boolean check){
         this.panel=panel;
         this.Olympics=Olympics;
@@ -36,16 +31,15 @@ public class OlympicObj implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         ImageIcon temp = ((ImageIcon)((JLabel)panel.getComponent(0)).getIcon());
 
-        if( temp.getImage()==Olympics.getImage()){
+        if(temp.getImage()==Olympics.getImage()){
             ((JLabel)panel.getComponent(0)).setIcon(Sport);
             this.isClicked=true;
         }
         this.gameBoard.checkBoard(this);
     }
-    void gotAMatch(OlympicObj Obj){
-        p1= new Player("P1", 0, 0, true);
-        p2= new Player("P2", 0, 0, false);
 
+
+    void gotAMatch(OlympicObj Obj){
         if(Obj.check){//has been checked
             if(Obj.isClicked){//has been clicked
                 if(Obj!=this){//not itself
@@ -61,18 +55,15 @@ public class OlympicObj implements MouseListener {
                         if(JOptionPane.showConfirmDialog(this.gameBoard, "Not a match. Other player's turn...")==JOptionPane.OK_OPTION){
                             this.Reset();
                             Obj.Reset();
-                            p1.switchTurns(p2);
-                            if(p1.turn){
-                                String scoreStr= Integer.toString(p1.score);
+                            gameBoard.p1.switchTurns(gameBoard.p2);
+                            if(gameBoard.p1.turn){
+                                String scoreStr= Integer.toString(gameBoard.p1.score);
                                 gameBoard.Player1TF.setText(scoreStr);
-                                gameBoard.Player2L.setFont(gameBoard.Player2L.getFont().deriveFont(16f));
-                                gameBoard.Player1L.setFont(gameBoard.Player1L.getFont().deriveFont(20f));
                             }
-                            else{
-                                String scoreStr= Integer.toString(p2.score);
+                            else {
+                                String scoreStr= Integer.toString(gameBoard.p2.score);
                                 gameBoard.Player2TF.setText(scoreStr);
-                                gameBoard.Player2L.setFont(gameBoard.Player2L.getFont().deriveFont(20f));
-                                gameBoard.Player1L.setFont(gameBoard.Player1L.getFont().deriveFont(16f));
+
                             }
 
                         }
@@ -110,11 +101,11 @@ public class OlympicObj implements MouseListener {
     }
     void MatchFunc(){
         JOptionPane.showMessageDialog(this.gameBoard, "You got a match! It's your turn again.");
-        if(p1.turn){
-            p1.addScore();
+        if(gameBoard.p1.turn){
+            gameBoard.p1.addScore();
         }
         else{
-            p2.addScore();
+            gameBoard.p2.addScore();
         }
     }
 }
