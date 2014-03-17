@@ -8,13 +8,14 @@ import java.util.Collections;
 /**
  * Created by Jennifer Balling on 3/10/14.
  */
+//Track points correctly
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
     private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
     public JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
-    private ImageIcon OlympicRings, CardBack, Card, Skater, Skater2, SnowB, SnowB2, FreestyleSki, FreestyleSki2, Luge, Luge2, Hockey, Hockey2, SkiJump, SkiJump2, Skeleton, Skeleton2, BobSled, BobSled2, Biathlon, Biathlon2,  Xcountry, Xcountry2;
+    private ImageIcon OlympicRings, CardBack, Skater, Skater2, SnowB, SnowB2, FreestyleSki, FreestyleSki2, Luge, Luge2, Hockey, Hockey2, SkiJump, SkiJump2, Skeleton, Skeleton2, BobSled, BobSled2, Biathlon, Biathlon2,  Xcountry, Xcountry2;
     private int LENGTH = 700, WIDTH = 700;
-    private int GridL, GridW, num, P1ScoreCount, P2ScoreCount;
+    public int GridL, GridW, num;
     private JTextField input;
     private ImageIcon PicArr[]= new ImageIcon[20];
     ArrayList<Integer> list= new ArrayList<Integer>();
@@ -185,7 +186,7 @@ public class Memory extends JFrame implements ActionListener{
         ScoreP= new JPanel();
         Player1L= new JLabel("Player 1:");
         Player1L.setForeground(Color.BLUE);
-        Player1L.setFont(Player1L.getFont().deriveFont(16f));
+        Player1L.setFont(Player1L.getFont().deriveFont(20f));
         Player1TF= new JLabel("0");
         Player1TF.setFont(Player1TF.getFont().deriveFont(16f));
         Player2L= new JLabel("Player 2:");

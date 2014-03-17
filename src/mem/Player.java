@@ -23,16 +23,14 @@ public class Player {
         if(pObj.turn){
             this.turn=true;
             pObj.turn=false;
-            System.out.println("This's turn");
-            gameBoard.Player2L.setFont(gameBoard.Player2L.getFont().deriveFont(20f));
-            gameBoard.Player1L.setFont(gameBoard.Player1L.getFont().deriveFont(16f));
+            gameBoard.Player2L.setFont(gameBoard.Player2L.getFont().deriveFont(16f));
+            gameBoard.Player1L.setFont(gameBoard.Player1L.getFont().deriveFont(20f));
         }
         else{
             this.turn=false;
             pObj.turn=true;
-            System.out.println("pObj's turn");
-            gameBoard.Player2L.setFont(gameBoard.Player2L.getFont().deriveFont(16f));
-            gameBoard.Player1L.setFont(gameBoard.Player1L.getFont().deriveFont(20f));
+            gameBoard.Player2L.setFont(gameBoard.Player2L.getFont().deriveFont(20f));
+            gameBoard.Player1L.setFont(gameBoard.Player1L.getFont().deriveFont(16f));
         }
         //gameBoard.update(this.getGraphics());
         gameBoard.revalidate();

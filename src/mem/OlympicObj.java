@@ -45,6 +45,15 @@ public class OlympicObj implements MouseListener {
                 if(Obj!=this){//not itself
                     if(Obj.Sport.getImage()==this.Sport.getImage()){//same image
                         this.MatchFunc();
+                        if(gameBoard.p1.turn){
+                            String scoreStr= Integer.toString(gameBoard.p1.score);
+                            gameBoard.Player1TF.setText(scoreStr);
+                        }
+                        else {
+                            String scoreStr= Integer.toString(gameBoard.p2.score);
+                            gameBoard.Player2TF.setText(scoreStr);
+
+                        }
                         ImageIcon done= new ImageIcon(this.getClass().getResource("done.png"));
                         ((JLabel)this.panel.getComponent(0)).setIcon(done);
                         ((JLabel)Obj.panel.getComponent(0)).setIcon(done);
@@ -56,16 +65,6 @@ public class OlympicObj implements MouseListener {
                             this.Reset();
                             Obj.Reset();
                             gameBoard.p1.switchTurns(gameBoard.p2);
-                            if(gameBoard.p1.turn){
-                                String scoreStr= Integer.toString(gameBoard.p1.score);
-                                gameBoard.Player1TF.setText(scoreStr);
-                            }
-                            else {
-                                String scoreStr= Integer.toString(gameBoard.p2.score);
-                                gameBoard.Player2TF.setText(scoreStr);
-
-                            }
-
                         }
                         else {
                             System.exit(0);
