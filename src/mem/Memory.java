@@ -8,10 +8,9 @@ import java.util.Collections;
 /**
  * Created by Jennifer Balling on 3/10/14.
  */
-//Track points correctly
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
-    private JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
+    public JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
     public JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
     private ImageIcon OlympicRings, CardBack, Skater, Skater2, SnowB, SnowB2, FreestyleSki, FreestyleSki2, Luge, Luge2, Hockey, Hockey2, SkiJump, SkiJump2, Skeleton, Skeleton2, BobSled, BobSled2, Biathlon, Biathlon2,  Xcountry, Xcountry2;
     private int LENGTH = 700, WIDTH = 700;
@@ -24,7 +23,8 @@ public class Memory extends JFrame implements ActionListener{
     public int counter, arrCounter;
     public OlympicObj oArr[];
     public Player p1,p2;
-
+    public ImageIcon done;
+//WATCH COUNT
 
     public Memory(){
 

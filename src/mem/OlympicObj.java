@@ -3,6 +3,7 @@ package mem;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.font.ImageGraphicAttribute;
 
 /**
  * Created by JenniferBalling on 3/12/14.
@@ -15,6 +16,7 @@ public class OlympicObj implements MouseListener {
     boolean isClicked;
     Memory gameBoard;
     boolean check;
+
 
     OlympicObj(JPanel panel, ImageIcon Olympics, ImageIcon Sport, boolean isClicked, Memory gameBoard, boolean check){
         this.panel=panel;
@@ -35,12 +37,13 @@ public class OlympicObj implements MouseListener {
             ((JLabel)panel.getComponent(0)).setIcon(Sport);
             this.isClicked=true;
         }
+
         this.gameBoard.checkBoard(this);
     }
 
 
     void gotAMatch(OlympicObj Obj){
-        if(Obj.check){//has been checked
+       if(Obj.check){//has been checked
             if(Obj.isClicked){//has been clicked
                 if(Obj!=this){//not itself
                     if(Obj.Sport.getImage()==this.Sport.getImage()){//same image
@@ -54,9 +57,9 @@ public class OlympicObj implements MouseListener {
                             gameBoard.Player2TF.setText(scoreStr);
 
                         }
-                        ImageIcon done= new ImageIcon(this.getClass().getResource("done.png"));
-                        ((JLabel)this.panel.getComponent(0)).setIcon(done);
-                        ((JLabel)Obj.panel.getComponent(0)).setIcon(done);
+                        gameBoard.done= new ImageIcon(this.getClass().getResource("done.png"));
+                        ((JLabel)this.panel.getComponent(0)).setIcon(gameBoard.done);
+                        ((JLabel)Obj.panel.getComponent(0)).setIcon(gameBoard.done);
                         this.check=false;
                         Obj.check=false;
                     }
@@ -106,5 +109,6 @@ public class OlympicObj implements MouseListener {
         else{
             gameBoard.p2.addScore();
         }
+        gameBoard.p1.winnerCheck();
     }
 }
