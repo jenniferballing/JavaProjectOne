@@ -47,8 +47,12 @@ public class Player {
         String input= "We have a WINNER! Congratulations "+ winner +"!" + " Would you like to play again?";
         if(JOptionPane.showConfirmDialog(gameBoard, input)==JOptionPane.OK_OPTION);
 
-            gameBoard.dispose();
-            new Memory();
+            gameBoard.GameLayoutScreen();
+            gameBoard.update(gameBoard.getGraphics());
+            gameBoard.revalidate();
+            gameBoard.repaint();
+            //gameBoard.dispose();
+            //new Memory();
         }
     }
 }

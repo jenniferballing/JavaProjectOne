@@ -10,8 +10,8 @@ import java.util.Collections;
  */
 public class Memory extends JFrame implements ActionListener{
     private JButton YesB, NoB, OKB;
-    public JPanel ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
-    public JLabel Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
+    public JPanel WinsP, ContainerP, TitleP, ImageP, QuestionP, ButtonP, BonusP,GridP, ScoreP, panelHolder[][] ;
+    public JLabel p1WinsL, p2WinsL, p1WinsTF, p2WinsTF, Title, Player1L, Player2L, ORImageL, QuestionTF, Player1TF, Player2TF, SkateL, Skate2L, Snow2L, FS2L, L2L, Hock2L, SJ2L,  SnowL, FSL, LL, HockL, SJL, SkelL, BSL, BiaL, XCL, Skel2L, BS2L, Bia2L, XC2L ;
     private ImageIcon OlympicRings, CardBack, Skater, Skater2, SnowB, SnowB2, FreestyleSki, FreestyleSki2, Luge, Luge2, Hockey, Hockey2, SkiJump, SkiJump2, Skeleton, Skeleton2, BobSled, BobSled2, Biathlon, Biathlon2,  Xcountry, Xcountry2;
     private int LENGTH = 700, WIDTH = 700;
     public int GridL, GridW, num;
@@ -171,21 +171,48 @@ public class Memory extends JFrame implements ActionListener{
 
         ContainerP.removeAll();
         ContainerP.setSize(new Dimension(700, 700));
-        ContainerP.setBackground(Color.WHITE);
-        TitleP.setBackground(Color.BLACK);
-        Title.setForeground(Color.ORANGE);
-        Title.setFont(Title.getFont().deriveFont(35f));
+        ContainerP.setBackground(Color.white);
+        TitleP.setBackground(Color.white);
+        Title.setForeground(Color.darkGray);
+        Title.setFont(Title.getFont().deriveFont(40f));
+        TitleP.setPreferredSize(new Dimension(700, 80));
+        Title.setLayout(new FlowLayout(FlowLayout.CENTER));
+        TitleP.add(Title);
+        //TitleP.add(WinsP);
+
         //GRID PANEL
         GridP= new JPanel();
-        //GridP.setLayout(new GridLayout(GridL, GridW));
+        GridP.setLayout(new FlowLayout(FlowLayout.LEFT));
         GridP.setBackground(Color.black);
         GridP.setPreferredSize(new Dimension((GridL*80),(GridW*80)));
         PlaceCards();
 
+        //WINS PANEL
+        WinsP= new JPanel();
+        WinsP.setBackground(Color.darkGray);
+        WinsP.setPreferredSize(new Dimension(600, 40));
+        WinsP.setLayout(new FlowLayout(FlowLayout.CENTER));
+        p1WinsL= new JLabel("Wins Player 1: ");
+        p1WinsL.setForeground(Color.white);
+        p1WinsL.setFont(p1WinsL.getFont().deriveFont(16f));
+        p1WinsTF= new JLabel("0        ");
+        p1WinsTF.setFont(p1WinsTF.getFont().deriveFont(16f));
+        p1WinsTF.setForeground(Color.white);
+        p2WinsL= new JLabel("Wins Player 2: ");
+        p2WinsL.setForeground(Color.white);
+        p2WinsL.setFont(p2WinsL.getFont().deriveFont(16f));
+        p2WinsTF= new JLabel("0");
+        p2WinsTF.setFont(p2WinsTF.getFont().deriveFont(16f));
+        p2WinsTF.setForeground(Color.white);
+        WinsP.add(p1WinsL);
+        WinsP.add(p1WinsTF);
+        WinsP.add(p2WinsL);
+        WinsP.add(p2WinsTF);
+
         //SCORE PANEL
         ScoreP= new JPanel();
         Player1L= new JLabel("Player 1:");
-        Player1L.setForeground(Color.BLUE);
+        Player1L.setForeground(Color.blue);
         Player1L.setFont(Player1L.getFont().deriveFont(20f));
         Player1TF= new JLabel("0");
         Player1TF.setFont(Player1TF.getFont().deriveFont(16f));
@@ -196,13 +223,14 @@ public class Memory extends JFrame implements ActionListener{
         Player2TF.setFont(Player2TF.getFont().deriveFont(16f));
         ScoreP.setLayout(new FlowLayout(FlowLayout.CENTER));
         ScoreP.setBackground(Color.WHITE);
-        ScoreP.setPreferredSize(new Dimension(500, 50));
+        ScoreP.setPreferredSize(new Dimension(600, 50));
         ScoreP.add(Player1L);
         ScoreP.add(Player1TF);
         ScoreP.add(Player2L);
         ScoreP.add(Player2TF);
 
         ContainerP.add(TitleP);
+        ContainerP.add(WinsP);
         ContainerP.add(GridP);
         ContainerP.add(ScoreP);
         add(ContainerP, BorderLayout.CENTER);
@@ -241,8 +269,8 @@ public class Memory extends JFrame implements ActionListener{
         oArr= new OlympicObj[NumCards];
 
         panelHolder = new JPanel[i][j];
-        setLayout(new FlowLayout(FlowLayout.CENTER));
-        GridP.setPreferredSize(new Dimension(GridL * 100, GridW * 100));
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        GridP.setPreferredSize(new Dimension(GridL * 89, GridW * 87));
         for(int m = 0; m < i; m++) {
             for(int n = 0; n < j; n++) {
                 panelHolder[m][n] = new JPanel();
