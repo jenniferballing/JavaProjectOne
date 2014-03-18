@@ -184,7 +184,7 @@ public class Memory extends JFrame implements ActionListener{
         GridP= new JPanel();
         GridP.setLayout(new FlowLayout(FlowLayout.LEFT));
         GridP.setBackground(Color.black);
-        GridP.setPreferredSize(new Dimension((GridL*80),(GridW*80)));
+        GridP.setPreferredSize(new Dimension((GridL*95),(GridW*95)));
         PlaceCards();
 
         //WINS PANEL
@@ -195,7 +195,8 @@ public class Memory extends JFrame implements ActionListener{
         p1WinsL= new JLabel("Wins Player 1: ");
         p1WinsL.setForeground(Color.white);
         p1WinsL.setFont(p1WinsL.getFont().deriveFont(16f));
-        p1WinsTF= new JLabel("0        ");
+        p1WinsTF= new JLabel("0");
+        JLabel SpaceTF= new JLabel("             ");
         p1WinsTF.setFont(p1WinsTF.getFont().deriveFont(16f));
         p1WinsTF.setForeground(Color.white);
         p2WinsL= new JLabel("Wins Player 2: ");
@@ -206,6 +207,7 @@ public class Memory extends JFrame implements ActionListener{
         p2WinsTF.setForeground(Color.white);
         WinsP.add(p1WinsL);
         WinsP.add(p1WinsTF);
+        WinsP.add(SpaceTF);
         WinsP.add(p2WinsL);
         WinsP.add(p2WinsTF);
 
@@ -270,7 +272,7 @@ public class Memory extends JFrame implements ActionListener{
 
         panelHolder = new JPanel[i][j];
         setLayout(new FlowLayout(FlowLayout.LEFT));
-        GridP.setPreferredSize(new Dimension(GridL * 89, GridW * 87));
+        GridP.setPreferredSize(new Dimension(GridL * 95, GridW * 95));
         for(int m = 0; m < i; m++) {
             for(int n = 0; n < j; n++) {
                 panelHolder[m][n] = new JPanel();

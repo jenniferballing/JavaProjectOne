@@ -40,19 +40,38 @@ public class Player {
     }
     void winnerCheck(){
         if((gameBoard.p1.score+gameBoard.p2.score==((gameBoard.GridW*gameBoard.GridL)/2))){
-        String winner;
-        if(gameBoard.p1.score>gameBoard.p2.score) winner = "Player 1";
-        else if (gameBoard.p1.score<gameBoard.p2.score) winner= "Player 2";
-        else winner = "Both Players! Its a tie!";
-        String input= "We have a WINNER! Congratulations "+ winner +"!" + " Would you like to play again?";
-        if(JOptionPane.showConfirmDialog(gameBoard, input)==JOptionPane.OK_OPTION);
+            String winner;
+            if(gameBoard.p1.score>gameBoard.p2.score){
+                winner = "Player 1";
+                String str = gameBoard.p1WinsTF.getText();
+                int newScore= Integer.parseInt(str);
+                newScore+=1;
+                String total= Integer.toString(newScore);
+                gameBoard.p1WinsTF.setText(total);
+            }
+            else if (gameBoard.p1.score<gameBoard.p2.score){
+                winner= "Player 2";
+                String str = gameBoard.p2WinsTF.getText();
+                int newScore= Integer.parseInt(str);
+                newScore+=1;
+                String total= Integer.toString(newScore);
+                gameBoard.p2WinsTF.setText(total);
+            }
+            else winner = "Both Players! Its a tie!";
+            String input= "We have a WINNER! Congratulations "+ winner +"!" + " Would you like to play again?";
+            if(JOptionPane.showConfirmDialog(gameBoard, input)==JOptionPane.OK_OPTION){
+                gameBoard.list.clear();
+                //gameBoard.Player2TF.setText("0");
+                //gameBoard.Player1TF.setText("hi");
+                gameBoard.GameLayoutScreen();
+                gameBoard.update(gameBoard.getGraphics());
+                gameBoard.revalidate();
+                gameBoard.repaint();
+                }
+            else System.exit(0);
 
-            gameBoard.GameLayoutScreen();
-            gameBoard.update(gameBoard.getGraphics());
-            gameBoard.revalidate();
-            gameBoard.repaint();
-            //gameBoard.dispose();
-            //new Memory();
+
+            }
         }
     }
-}
+
